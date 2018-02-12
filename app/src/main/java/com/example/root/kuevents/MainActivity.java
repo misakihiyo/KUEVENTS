@@ -1,13 +1,9 @@
 package com.example.root.kuevents;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.view.View;
-import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -76,12 +72,15 @@ public class MainActivity extends AppCompatActivity
 
         if (id == R.id.profile) {
             setFragment(new profile());
-        } else if (id == R.id.clubs) {
-            setFragment(new clubs());
-        } else if (id == R.id.location) {
+
+        }
+        else if (id == R.id.events) {
+            setFragment(new events());
+        }
+        else if (id == R.id.location) {
             setFragment(new location());
 
-            //Intent i = new Intent(MainActivity.this, MapsActivity.class);
+           // Intent i = new Intent(MainActivity.this, MapsActivity.class);
             //startActivity(i);
         }
 
@@ -89,6 +88,7 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
     }
+
 
 
     public void setFragment(Fragment fragment){
